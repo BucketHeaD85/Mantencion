@@ -11,6 +11,7 @@ import Modelo.Unidad;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JTextField;
 
 /**
  *
@@ -140,12 +141,23 @@ public class Agregar extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        JTextField[] gg = {this.jTextField1,this.jTextField2,this.jTextField3,this.jTextField4};
+        for(JTextField a : gg){
+            if(a.getText().isEmpty()){
+                proyecto.Error wp = new proyecto.Error(this,true);
+                wp.ready("Asegúrese de llenar todos los campos");
+                wp.setVisible(true);
+                break;
+            }
+        }
+        /* 
         try {
             Producto gg = new Producto();
             gg.agregarNuevo(this.jTextField1.getText(), this.jTextField3.getText(), this.jTextField2.getText(), Integer.parseInt(this.jTextField1.getText()));
         } catch (SQLException ex) {
             Logger.getLogger(Agregar.class.getName()).log(Level.SEVERE, null, ex);
         }
+        */
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

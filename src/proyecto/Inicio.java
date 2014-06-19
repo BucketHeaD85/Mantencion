@@ -17,6 +17,7 @@ public class Inicio extends javax.swing.JFrame {
      */
     public Inicio() {
         initComponents();
+        this.jPasswordField1.setText("");
     }
 
     /**
@@ -123,14 +124,45 @@ public class Inicio extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Operador.Menu mn = new Operador.Menu();
-        mn.setVisible(true);
+        if(this.jTextField1.getText().isEmpty()){
+        Error np = new Error(this,true);
+        np.ready("Debe ingresar su nombre de usuario");
+        np.setVisible(true);
+        }
+        else{
+            if(this.jPasswordField1.getText().isEmpty()){
+                Error np = new Error(this,true);
+                np.ready("Debe ingresar su contraseña");
+                np.setVisible(true);
+            }
+            else{
+            Operador.Menu mn = new Operador.Menu();
+        
+            mn.setVisible(true);
+            }
+        }
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        Administrador.Menu adm = new Administrador.Menu();
-        adm.setVisible(true);
+         if(this.jTextField1.getText().isEmpty()){
+        Error np = new Error(this,true);
+        np.ready("Debe ingresar su nombre de usuario");
+        np.setVisible(true);
+        }
+        else{
+            if(this.jPasswordField1.getText().isEmpty()){
+                Error np = new Error(this,true);
+                np.ready("Debe ingresar su contraseña");
+                np.setVisible(true);
+            }
+            else{
+            Administrador.Menu adm = new Administrador.Menu();
+              adm.setVisible(true);
         
+            }
+        }
+      
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed

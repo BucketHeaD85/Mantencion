@@ -69,6 +69,31 @@ public class Producto {
             return true;
         }
     }
+    
+     public boolean modificar(String a, String b,String c) throws SQLException{
+        String sql = "update table productos set "+a+"='"+b+"' where ID ='"+c+"'";
+        st = cn.createStatement();
+        int gg = st.executeUpdate(sql);
+       if(gg==0){
+           return false;
+       }
+       else{
+           return true;
+       }
+        
+    }
+    public boolean modificar(String a, int b,String c) throws SQLException{
+        String sql = "update table productos set "+a+"="+b+" where ID ='"+c+"'";
+        st = cn.createStatement();
+        int gg = st.executeUpdate(sql);
+       if(gg==0){
+           return false;
+       }
+       else{
+           return true;
+       }
+        
+    }
 
     public String getNombre() {
         return nombre;

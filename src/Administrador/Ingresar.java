@@ -7,6 +7,7 @@
 package Administrador;
 
 import Modelo.Producto;
+import javax.swing.JTextField;
 
 /**
  *
@@ -185,7 +186,15 @@ public class Ingresar extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-   
+        JTextField[] gg = {this.jTextField1,this.jTextField2,this.jTextField4,this.jTextField5};
+        for(JTextField a : gg){
+            if(a.getText().isEmpty()){
+                proyecto.Error wp = new proyecto.Error(this,true);
+                wp.ready("Porfavor, asegúrese de llenar todos los campos");
+                wp.setVisible(true);
+                break;
+            }
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
